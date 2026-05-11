@@ -13,6 +13,7 @@
 
 
 #define STR(var) #var
+//test
 
 //--- 定数定義
 enum SceneKind
