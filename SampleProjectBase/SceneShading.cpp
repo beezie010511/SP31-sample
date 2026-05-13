@@ -1,4 +1,4 @@
-﻿#include "SceneShading.h"
+#include "SceneShading.h"
 #include "Model.h"
 #include "CameraBase.h"
 #include "LightBase.h"
@@ -12,7 +12,9 @@ void SceneShading::Init()
 		CreateObj<VertexShader>("VS_GouraudShading"),
 		CreateObj<PixelShader>("PS_TexColor"),
 		CreateObj<PixelShader>("PS_PhongShading"),
-		CreateObj<PixelShader>("PS_GouraudShading")
+		CreateObj<PixelShader>("PS_GouraudShading"),
+		CreateObj<VertexShader>("VS_WorldPosition"),
+		CreateObj<PixelShader>("PS_PhongSpecular"),
 	};
 	const char* file[] = {
 		"Assets/Shader/VS_Object.cso",
@@ -20,6 +22,8 @@ void SceneShading::Init()
 		"Assets/Shader/PS_TexColor.cso",
 		"Assets/Shader/PS_PhongShading.cso",
 		"Assets/Shader/PS_GouraudShading.cso"
+		"Assets/Shader/VS_WorldPosition.cso"
+		"Assets/Shader/PS_PhongSpecular.cso"
 	};
 
 	int shaderNum = _countof(shader);
@@ -77,12 +81,15 @@ void SceneShading::Draw()
 		GetObj<Shader>("VS_GouraudShading"),
 		GetObj<Shader>("PS_TexColor"),
 		GetObj<Shader>("PS_PhongShading"),
-		GetObj<Shader>("PS_GouraudShading")
+		GetObj<Shader>("PS_GouraudShading"),
+		GetObj<Shader>("VS_WorldPosition"),
+		GetObj<Shader>("PS_PhongSpecular"),
 	};
 	int shaderPair[][2] = {
 		{0, 2}, // 通常表示
 		{1, 4}, // グローシェーディング
 		{0, 3}, // フォンシェーディング
+		{5, 6}, // フォン鏡面反射
 	};
 
 	SetRenderTargets(1, &pDefRTV, pDefDSV);

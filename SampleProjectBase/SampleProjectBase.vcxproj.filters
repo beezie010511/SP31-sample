@@ -235,5 +235,11 @@
     <FxCompile Include="VS_GouraudShading.hlsl">
       <Filter>リソース ファイル\VertexShader</Filter>
     </FxCompile>
+    <FxCompile Include="VS_WorldPosition.hlsl">
+      <Filter>リソース ファイル\VertexShader</Filter>
+    </FxCompile>
+    <FxCompile Include="PS_PhongSpecular.hlsl">
+      <Filter>リソース ファイル\PixelShader</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>
