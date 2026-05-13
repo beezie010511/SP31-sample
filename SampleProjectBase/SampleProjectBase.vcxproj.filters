@@ -135,6 +135,12 @@
     <ClCompile Include="SceneShading.cpp">
       <Filter>ソース ファイル\App\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="SceneShadingTest.cpp">
+      <Filter>ソース ファイル\App\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneRootTest.cpp">
+      <Filter>ソース ファイル\App</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">

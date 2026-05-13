@@ -190,14 +190,20 @@
     <ClCompile Include="SceneAnimation.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneBlank.cpp" />
-    <ClCompile Include="SceneShading.cpp" />
+    <ClCompile Include="SceneRootTest.cpp" />
+    <ClCompile Include="SceneShading.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="SceneShadingTest.cpp" />
     <ClCompile Include="SceneVisual.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="SpotLight.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Startup.cpp" />
     <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="SceneRoot.cpp" />
+    <ClCompile Include="SceneRoot.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h" />
