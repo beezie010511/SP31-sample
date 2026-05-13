@@ -6,13 +6,13 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-#define APP_TITLE "SP31 Shader "
+#define APP_TITLE "AT13A638 アンドレアスケンネスパオロタタレダ "
 
-// ��ʃT�C�Y
+// 画面サイズ
 #define SCREEN_WIDTH (1280)
 #define SCREEN_HEIGHT (720)
 
-// ���\�[�X�p�X
+// リソースパス
 #define ASSET(path)	"Assets/"path
 
 

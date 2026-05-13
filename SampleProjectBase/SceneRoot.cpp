@@ -1,4 +1,4 @@
-﻿#include "SceneRoot.h"
+#include "SceneRoot.h"
 #include <stdio.h>
 #include "CameraDCC.h"
 #include "MoveLight.h"
@@ -8,18 +8,19 @@
 
 #include "SceneVisual.h"
 #include "SceneBlank.h"
+#include "SceneShading.h"
 
 #include "DebugLog.h"
 
 
 #define STR(var) #var
-//test
 
 //--- 定数定義
 enum SceneKind
 {
 	SCENE_BLANK,		// 空きシーン
 	SCENE_VISUAL,		// 01_シェーダー入門
+	SCENE_SHADING,		// 02_シェーディングサンプル
 	//SCENE_ANIMATION,	// ワンスキンアニメーションサンプル
 	SCENE_MAX			// 終端
 };
@@ -40,6 +41,10 @@ void SceneRoot::ChangeScene()
 		break;
 	case SCENE_VISUAL:
 		AddSubScene<SceneVisual>();
+		m_sceneName = "SCENE_VISUAL";
+		break;
+	case SCENE_SHADING:
+		AddSubScene<SceneShading>();
 		m_sceneName = "SCENE_VISUAL";
 		break;
 	/*case SCENE_ANIMATION:
