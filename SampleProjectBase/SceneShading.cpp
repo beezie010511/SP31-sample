@@ -21,9 +21,9 @@ void SceneShading::Init()
 		"Assets/Shader/VS_GouraudShading.cso",
 		"Assets/Shader/PS_TexColor.cso",
 		"Assets/Shader/PS_PhongShading.cso",
-		"Assets/Shader/PS_GouraudShading.cso"
-		"Assets/Shader/VS_WorldPosition.cso"
-		"Assets/Shader/PS_PhongSpecular.cso"
+		"Assets/Shader/PS_GouraudShading.cso",
+		"Assets/Shader/VS_WorldPosition.cso",
+		"Assets/Shader/PS_PhongSpecular.cso",
 	};
 
 	int shaderNum = _countof(shader);
