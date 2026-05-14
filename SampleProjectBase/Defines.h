@@ -6,13 +6,13 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-#define APP_TITLE "AT13A638 ƒAƒ“ƒhƒŒƒAƒX@ƒPƒ“ƒlƒX@ƒpƒIƒ@ƒ^ƒ^ƒŒƒ_"
+#define APP_TITLE "AT13A638 ã‚¢ãƒ³ãƒ‰ãƒ¬ã‚¢ã‚¹ã€€ã‚±ãƒ³ãƒã‚¹ã€€ãƒ‘ã‚ªãƒ­ã€€ã‚¿ã‚¿ãƒ¬ãƒ€"
 
-// ‰æ–ÊƒTƒCƒY
+// ç”»é¢ã‚µã‚¤ã‚º
 #define SCREEN_WIDTH (1280)
 #define SCREEN_HEIGHT (720)
 
-// ƒŠƒ\[ƒXƒpƒX
+// ãƒªã‚½ãƒ¼ã‚¹ãƒ‘ã‚¹
 #define ASSET(path)	"Assets/"path
 
 
