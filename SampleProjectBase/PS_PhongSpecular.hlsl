@@ -8,9 +8,9 @@ struct PS_IN
 
 cbuffer Light : register(b0)
 {
-    float4 lightDir;
     float4 lightDiffuse;
     float4 lightAmbient;
+    float4 lightDir;
 };
 
 cbuffer Camera : register(b1)
@@ -30,7 +30,7 @@ float4 main(PS_IN pin) : SV_TARGET
     
     float3 N = normalize(pin.normal);
     float3 L = normalize(-lightDir.xyz);
-    float diffuse = saturate(dot(N, L));
+    float diffuse = saturate(dot(N, L)* 0.5 + 0.5);
     
     color *= diffuse * lightDiffuse + lightAmbient;
     
