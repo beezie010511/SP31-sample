@@ -9,6 +9,7 @@
 #include "SceneVisual.h"
 #include "SceneBlank.h"
 #include "SceneShading.h"
+#include "SceneLight.h"
 
 #include "DebugLog.h"
 
@@ -21,6 +22,7 @@ enum SceneKind
 	SCENE_BLANK,		// 空きシーン
 	SCENE_VISUAL,		// 01_シェーダー入門
 	SCENE_SHADING,		// 02_シェーディングサンプル
+	SCENE_LIGHT,		// 03_ライトサンプル
 	//SCENE_ANIMATION,	// ワンスキンアニメーションサンプル
 	SCENE_MAX			// 終端
 };
@@ -46,6 +48,10 @@ void SceneRoot::ChangeScene()
 	case SCENE_SHADING:
 		AddSubScene<SceneShading>();
 		m_sceneName = "SCENE_VISUAL";
+		break;
+	case SCENE_LIGHT:
+		AddSubScene<SceneLight>();
+		m_sceneName = "SCENE_LIGHT";
 		break;
 	/*case SCENE_ANIMATION:
 		AddSubScene<SceneAnimation>();
