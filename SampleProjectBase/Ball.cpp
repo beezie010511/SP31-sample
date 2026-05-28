@@ -69,7 +69,7 @@ void Ball::Update(float tick)
 	//m_time += tick;
 }
 
-void Ball::Drow()
+void Ball::Draw()
 {
 	// 球の座標行列作成
 	DirectX::XMFLOAT4X4 mat;

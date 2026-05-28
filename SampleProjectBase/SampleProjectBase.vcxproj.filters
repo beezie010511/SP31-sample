@@ -141,6 +141,9 @@
     <ClCompile Include="SceneMoveObject.cpp">
       <Filter>ソース ファイル\App\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="SceneBurstVector.cpp">
+      <Filter>ソース ファイル\App\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -228,6 +231,9 @@
       <Filter>ヘッダー ファイル\App\Scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneMoveObject.h">
+      <Filter>ヘッダー ファイル\App\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBurstVector.h">
       <Filter>ヘッダー ファイル\App\Scene</Filter>
     </ClInclude>
   </ItemGroup>
