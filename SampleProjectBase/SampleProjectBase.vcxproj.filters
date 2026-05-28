@@ -138,6 +138,9 @@
     <ClCompile Include="SceneLight.cpp">
       <Filter>ソース ファイル\App\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="SceneMoveObject.cpp">
+      <Filter>ソース ファイル\App\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -222,6 +225,9 @@
       <Filter>ヘッダー ファイル\App\Scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneLight.h">
+      <Filter>ヘッダー ファイル\App\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMoveObject.h">
       <Filter>ヘッダー ファイル\App\Scene</Filter>
     </ClInclude>
   </ItemGroup>
