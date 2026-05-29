@@ -21,7 +21,7 @@ public:
 	void AddPos(DirectX::XMFLOAT3 pos);
 
 	void Update(float tick);
-	void Drow();
+	void Draw();
 
 	bool HitSphere(Ball b);			// ボール同士の当たり判定
 	float GetRadius();				// 球の半径を取得

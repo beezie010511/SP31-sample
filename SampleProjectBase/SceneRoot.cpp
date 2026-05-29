@@ -11,6 +11,7 @@
 #include "SceneShading.h"
 #include "SceneLight.h"
 #include "SceneMoveObject.h"
+#include "SceneBurstVector.h"
 
 #include "DebugLog.h"
 
@@ -25,6 +26,7 @@ enum SceneKind
 	SCENE_SHADING,		// 02_シェーディングサンプル
 	SCENE_LIGHT,		// 03_ライトサンプル
 	SCENE_MOVE_OBJECT,	// 04_移動オブジェクトサンプル
+	SCENE_BURST_VECTOR,	// 05_バーストベクターサンプル
 	//SCENE_ANIMATION,	// ワンスキンアニメーションサンプル
 	SCENE_MAX			// 終端
 };
@@ -58,6 +60,10 @@ void SceneRoot::ChangeScene()
 	case SCENE_MOVE_OBJECT:
 		AddSubScene<SceneMoveObject>();
 		m_sceneName = "SCENE_MOVE_OBJECT";
+		break;
+	case SCENE_BURST_VECTOR:
+		AddSubScene<SceneBurstVector>();
+		m_sceneName = "SCENE_BURST_VECTOR";
 		break;
 	/*case SCENE_ANIMATION:
 		AddSubScene<SceneAnimation>();

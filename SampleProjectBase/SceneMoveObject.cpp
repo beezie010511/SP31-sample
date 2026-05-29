@@ -70,7 +70,7 @@ void SceneMoveObject::Draw()
     }
     DirectX::XMFLOAT4X4 mat;
     XMStoreFloat4x4(&mat, XMMatrixTranspose(
-        XMMatrixScaling(1, 1, 1) *
+        XMMatrixScaling(0.3f, 0.3f, 0.3f) *
         XMMatrixTranslation(x, y, z)
     ));
 

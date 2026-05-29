@@ -190,6 +190,7 @@
     <ClCompile Include="SceneAnimation.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneBlank.cpp" />
+    <ClCompile Include="SceneBurstVector.cpp" />
     <ClCompile Include="SceneLight.cpp" />
     <ClCompile Include="SceneMoveObject.cpp" />
     <ClCompile Include="SceneShading.cpp" />
@@ -222,6 +223,7 @@
     <ClInclude Include="SceneAnimation.h" />
     <ClInclude Include="SceneBase.hpp" />
     <ClInclude Include="SceneBlank.h" />
+    <ClInclude Include="SceneBurstVector.h" />
     <ClInclude Include="SceneLight.h" />
     <ClInclude Include="SceneMoveObject.h" />
     <ClInclude Include="SceneRoot.h" />
