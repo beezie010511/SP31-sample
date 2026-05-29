@@ -135,6 +135,15 @@
     <ClCompile Include="SceneShading.cpp">
       <Filter>ソース ファイル\App\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="SceneLight.cpp">
+      <Filter>ソース ファイル\App\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMoveObject.cpp">
+      <Filter>ソース ファイル\App\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneBurstVector.cpp">
+      <Filter>ソース ファイル\App\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -218,6 +227,15 @@
     <ClInclude Include="SceneShading.h">
       <Filter>ヘッダー ファイル\App\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="SceneLight.h">
+      <Filter>ヘッダー ファイル\App\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMoveObject.h">
+      <Filter>ヘッダー ファイル\App\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBurstVector.h">
+      <Filter>ヘッダー ファイル\App\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="PS_TexColor.hlsl">
@@ -239,6 +257,15 @@
       <Filter>リソース ファイル\VertexShader</Filter>
     </FxCompile>
     <FxCompile Include="PS_PhongSpecular.hlsl">
+      <Filter>リソース ファイル\PixelShader</Filter>
+    </FxCompile>
+    <FxCompile Include="PS_PointLight.hlsl">
+      <Filter>リソース ファイル\PixelShader</Filter>
+    </FxCompile>
+    <FxCompile Include="PS_SpotLight.hlsl">
+      <Filter>リソース ファイル\PixelShader</Filter>
+    </FxCompile>
+    <FxCompile Include="PS_RimLight.hlsl">
       <Filter>リソース ファイル\PixelShader</Filter>
     </FxCompile>
   </ItemGroup>
