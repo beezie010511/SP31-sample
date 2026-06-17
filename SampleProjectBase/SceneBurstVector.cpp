@@ -15,7 +15,7 @@ void SceneBurstVector::Init()
 	m_Balls.push_back(b1);
 
 	Ball b2 = Ball(XMFLOAT3(10.0f, 0.0f, 0.0f));
-	b2.m_speedVec = (XMFLOAT3(-5.0f, 0.0f, 0.0f));
+	b2.m_speedVec = (XMFLOAT3(-6.0f, 0.0f, 0.0f));
 	b2.SetColor(XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f));
 	m_Balls.push_back(b2);
 
