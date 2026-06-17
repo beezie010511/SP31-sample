@@ -189,7 +189,9 @@
     <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="SceneAnimation.cpp" />
     <ClCompile Include="SceneBase.cpp" />
+    <ClCompile Include="SceneBezierCurve.cpp" />
     <ClCompile Include="SceneBlank.cpp" />
+    <ClCompile Include="SceneBumpmap.cpp" />
     <ClCompile Include="SceneBurstVector.cpp" />
     <ClCompile Include="SceneLight.cpp" />
     <ClCompile Include="SceneMoveObject.cpp" />
@@ -222,7 +224,9 @@
     <ClInclude Include="PointLight.h" />
     <ClInclude Include="SceneAnimation.h" />
     <ClInclude Include="SceneBase.hpp" />
+    <ClInclude Include="SceneBezierCurve.h" />
     <ClInclude Include="SceneBlank.h" />
+    <ClInclude Include="SceneBumpmap.h" />
     <ClInclude Include="SceneBurstVector.h" />
     <ClInclude Include="SceneLight.h" />
     <ClInclude Include="SceneMoveObject.h" />
@@ -235,6 +239,15 @@
     <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
+    <FxCompile Include="PS_Bumpmap.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="PS_ParallaxMapping.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="PS_ParallaxOcclusion.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
     <FxCompile Include="PS_PhongSpecular.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
@@ -270,6 +283,9 @@
     <FxCompile Include="PS_TexColor.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="VS_Bumpmap.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
     </FxCompile>
     <FxCompile Include="VS_GouraudShading.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>

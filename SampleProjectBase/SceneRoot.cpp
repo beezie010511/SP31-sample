@@ -12,6 +12,8 @@
 #include "SceneLight.h"
 #include "SceneMoveObject.h"
 #include "SceneBurstVector.h"
+#include "SceneBezierCurve.h"
+#include "SceneBumpmap.h"
 
 #include "DebugLog.h"
 
@@ -27,6 +29,8 @@ enum SceneKind
 	SCENE_LIGHT,		// 03_ライトサンプル
 	SCENE_MOVE_OBJECT,	// 04_移動オブジェクトサンプル
 	SCENE_BURST_VECTOR,	// 05_バーストベクターサンプル
+	SCENE_BEZIER_CURVE,	// 06_ベジェ曲線
+	SCENE_BUMPMAP,		// 07_バンプマップ
 	//SCENE_ANIMATION,	// ワンスキンアニメーションサンプル
 	SCENE_MAX			// 終端
 };
@@ -65,6 +69,15 @@ void SceneRoot::ChangeScene()
 		AddSubScene<SceneBurstVector>();
 		m_sceneName = "SCENE_BURST_VECTOR";
 		break;
+	case SCENE_BEZIER_CURVE:
+		AddSubScene<SceneBezierCurve>();
+		m_sceneName = "SCENE_BEZIER_CURVE";
+		break;
+	case SCENE_BUMPMAP:
+		AddSubScene<SceneBumpmap>();
+		m_sceneName = "SCENE_BUMPMAP";
+		break;
+
 	/*case SCENE_ANIMATION:
 		AddSubScene<SceneAnimation>();
 		sceneName = "SCENE_HIT";
