@@ -6,6 +6,7 @@
 #include "Sprite.h"
 #include "Input.h"
 #include "SceneRoot.h"
+#include "Billboard.h"
 
 //--- グローバル変数
 std::shared_ptr<SceneRoot> g_pScene;
@@ -17,6 +18,7 @@ HRESULT Init(HWND hWnd, UINT width, UINT height)
 	if (FAILED(hr)) { return hr; }
 	Geometory::Init();
 	Sprite::Init();
+	Billboard::Init();
 	InitInput();
 
 	// シーン作成
@@ -40,6 +42,7 @@ void Uninit()
 	g_pScene->Uninit();
 	g_pScene.reset();
 	UninitInput();
+	Billboard::Uninit();
 	Sprite::Uninit();
 	Geometory::Uninit();
 	UninitDirectX();

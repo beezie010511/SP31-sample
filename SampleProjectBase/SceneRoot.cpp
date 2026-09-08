@@ -5,6 +5,7 @@
 #include "Model.h"
 #include "Input.h"
 #include "Geometory.h"
+#include "Billboard.h"
 
 #include "SceneVisual.h"
 #include "SceneBlank.h"
@@ -14,6 +15,7 @@
 #include "SceneBurstVector.h"
 #include "SceneBezierCurve.h"
 #include "SceneBumpmap.h"
+#include "SceneParticleSystem.h"
 
 #include "DebugLog.h"
 
@@ -23,16 +25,17 @@
 //--- 定数定義
 enum SceneKind
 {
-	SCENE_BLANK,		// 空きシーン
-	SCENE_VISUAL,		// 01_シェーダー入門
-	SCENE_SHADING,		// 02_シェーディングサンプル
-	SCENE_LIGHT,		// 03_ライトサンプル
-	SCENE_MOVE_OBJECT,	// 04_移動オブジェクトサンプル
-	SCENE_BURST_VECTOR,	// 05_バーストベクターサンプル
-	SCENE_BEZIER_CURVE,	// 06_ベジェ曲線
-	SCENE_BUMPMAP,		// 07_バンプマップ
-	//SCENE_ANIMATION,	// ワンスキンアニメーションサンプル
-	SCENE_MAX			// 終端
+	SCENE_BLANK,			// 空きシーン
+	SCENE_VISUAL,			// 01_シェーダー入門
+	SCENE_SHADING,			// 02_シェーディングサンプル
+	SCENE_LIGHT,			// 03_ライトサンプル
+	SCENE_MOVE_OBJECT,		// 04_移動オブジェクトサンプル
+	SCENE_BURST_VECTOR,		// 05_バーストベクターサンプル
+	SCENE_BEZIER_CURVE,		// 06_ベジェ曲線
+	SCENE_BUMPMAP,			// 07_バンプマップ
+	SCENE_PARTICLE_SYSTEM,	// 08_パーティクルシステム
+	//SCENE_ANIMATION,		// ワンスキンアニメーションサンプル
+	SCENE_MAX				// 終端
 };
 
 /// <summary>
@@ -77,6 +80,11 @@ void SceneRoot::ChangeScene()
 		AddSubScene<SceneBumpmap>();
 		m_sceneName = "SCENE_BUMPMAP";
 		break;
+	case SCENE_PARTICLE_SYSTEM:
+		AddSubScene<SceneParticleSystem>();
+		m_sceneName = "SCENE_PARTICLE_SYSTEM";
+		break;
+	
 
 	/*case SCENE_ANIMATION:
 		AddSubScene<SceneAnimation>();
@@ -229,6 +237,8 @@ void SceneRoot::Draw()
 	Geometory::SetWorld(fmat);
 	Geometory::SetView(pCamera->GetView());
 	Geometory::SetProjection(pCamera->GetProj());
+	Billboard::SetView(pCamera->GetView());
+	Billboard::SetProjection(pCamera->GetProj());
 
 	// 網掛け描画
 	const int GridSize = 10;
