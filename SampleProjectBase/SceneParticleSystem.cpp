@@ -25,18 +25,27 @@ void SceneParticleSystem::Init()
 	// 重力設定
 	m_emitter.gravity = 9.8;
 
-	// 生存時間設定
-	m_emitter.lifeTime_min = 1.5f;
-	m_emitter.lifeTime_max = 2.0f;
+	//// 生存時間設定
+	//m_emitter.lifeTime_min = 1.5f;
+	//m_emitter.lifeTime_max = 2.0f;
 
-	// 投射ベクトル設定(水平速度min/max, 垂直速度min/max)
-	m_emitter.SetVector(0.0f, 10.0f, 13.0f, 15.0f);
+	//// 投射ベクトル設定(水平速度min/max, 垂直速度min/max)
+	//m_emitter.SetVector(0.0f, 10.0f, 13.0f, 15.0f);
 
-	// 生成数設定
-	m_emitter.SetGeneratNum(1, 3);
+	//// 生成数設定
+	//m_emitter.SetGeneratNum(1, 3);
 
-	// 生成間隔設定
-	m_emitter.SetGeneratTime(2.0f);
+	//// 生成間隔設定
+	//m_emitter.SetGeneratTime(2.0f);
+
+
+	// Launch particle settings
+	m_emitter.lifeTime_min = 1.0f;
+	m_emitter.lifeTime_max = 1.2f;
+	m_emitter.SetVector(0.0f, 0.0f, 20.0f, 25.0f); // straight upward
+	m_emitter.SetGeneratNum(1, 1);
+	m_emitter.SetGeneratTime(0.1f);
+
 }
 void SceneParticleSystem::Uninit()
 {
@@ -45,9 +54,28 @@ void SceneParticleSystem::Uninit()
 void SceneParticleSystem::Update(float tick)
 {
 	m_time += tick;
-	
+	fireworkTimer += tick;
+
+	// Every 3 seconds, reset emitter and launch a new firework
+	if (fireworkTimer >= fireworkInterval)
+	{
+		fireworkTimer = 0.0f;
+
+		// Reset emitter state
+		m_emitter.mode = Emitter::Launch;
+		m_emitter.ClearParticles();
+
+		// Reset launch particle settings
+		m_emitter.lifeTime_min = 1.0f;
+		m_emitter.lifeTime_max = 1.2f;
+		m_emitter.SetVector(0.0f, 0.0f, 20.0f, 25.0f);
+		m_emitter.SetGeneratNum(1, 1);
+		m_emitter.SetGeneratTime(0.1f);
+	}
+
 	m_emitter.Update(tick);
 }
+
 void SceneParticleSystem::Draw()
 {
 	m_emitter.Drow();

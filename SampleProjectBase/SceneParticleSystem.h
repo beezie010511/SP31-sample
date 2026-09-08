@@ -12,6 +12,9 @@ public:
 	void Update(float tick) override;
 	void Draw() override;
 private:
+	float fireworkTimer = 0.0f;
+	float fireworkInterval = 3.0f;
+
 	float m_time = 0.0f;
 	float m_speed = 1.0f;
 	
