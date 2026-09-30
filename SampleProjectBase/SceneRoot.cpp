@@ -16,6 +16,12 @@
 #include "SceneBezierCurve.h"
 #include "SceneBumpmap.h"
 #include "SceneParticleSystem.h"
+#include "SceneDefferedRendering.h"
+#include "SceneBloom.h"
+#include "SceneSpring.h"
+#include "SceneRubber.h"
+#include "SceneCloth.h"
+#include "SceneFog.h"
 
 #include "DebugLog.h"
 
@@ -34,6 +40,12 @@ enum SceneKind
 	SCENE_BEZIER_CURVE,		// 06_ベジェ曲線
 	SCENE_BUMPMAP,			// 07_バンプマップ
 	SCENE_PARTICLE_SYSTEM,	// 08_パーティクルシステム
+	SCENE_DEFFERED_RENDERING,	// 09_ディファードレンダリング
+	SCENE_BLOOM,			// 10_ブルーム
+	SCENE_SPRING,			// 11_ばねシミュレーション
+	SCENE_RUBBER,			// 12_ばねシミュレーション(連結)
+	SCENE_CLOTH,			// 13_布シミュレーション
+	SCENE_FOG,				// 14_霧サンプル
 	//SCENE_ANIMATION,		// ワンスキンアニメーションサンプル
 	SCENE_MAX				// 終端
 };
@@ -83,6 +95,30 @@ void SceneRoot::ChangeScene()
 	case SCENE_PARTICLE_SYSTEM:
 		AddSubScene<SceneParticleSystem>();
 		m_sceneName = "SCENE_PARTICLE_SYSTEM";
+		break;
+	case SCENE_DEFFERED_RENDERING:
+		AddSubScene<SceneDefferedRendering>();
+		m_sceneName = "SCENE_DEFFERED_RENDERING";
+		break;
+	case SCENE_BLOOM:
+		AddSubScene<SceneBloom>();
+		m_sceneName = "SCENE_BLOOM";
+		break;
+	case SCENE_SPRING:
+		AddSubScene<SceneSpring>();
+		m_sceneName = "SCENE_SPRING";
+		break;
+	case SCENE_RUBBER:
+		AddSubScene<SceneRubber>();
+		m_sceneName = "SCENE_RUBBER";
+		break;
+	case SCENE_CLOTH:
+		AddSubScene<SceneCloth>();
+		m_sceneName = "SCENE_CLOTH";
+		break;
+	case SCENE_FOG:
+		AddSubScene<SceneFog>();
+		m_sceneName = "SCENE_FOG";
 		break;
 	
 
@@ -152,6 +188,7 @@ void SceneRoot::Init()
 	CreateObj<Model>("Rock2");
 	GetObj<Model>("Rock2")->Load("Assets/Model/Rock-Set/Rock_2/Rock_2.fbx", 0.005f, true, true);
 
+
 	// アニメーション用モデル読み込み 重いので見たいとき以外はコメントアウト
 	/*Model* pAnimModel = CreateObj<Model>("Akai");
 	if (pAnimModel->Load("Assets/Model/Akai/Akai.fbx", 0.01f, true))
@@ -165,6 +202,9 @@ void SceneRoot::Init()
 
 	Model* pField = CreateObj<Model>("FieldModel");
 	pField->Load("Assets/Model/field/field.fbx", 1.0f, false, true);
+
+	Model* pTowerModel = CreateObj<Model>("Tower");
+	pTowerModel->Load("Assets/Model/tower/wooden_watch_tower2.fbx", 0.01f, false, true);
 
 	// シーンの作成
 	m_index = setting.index;

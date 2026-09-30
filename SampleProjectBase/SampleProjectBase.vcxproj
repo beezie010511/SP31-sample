@@ -194,12 +194,18 @@
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneBezierCurve.cpp" />
     <ClCompile Include="SceneBlank.cpp" />
+    <ClCompile Include="SceneBloom.cpp" />
     <ClCompile Include="SceneBumpmap.cpp" />
     <ClCompile Include="SceneBurstVector.cpp" />
+    <ClCompile Include="SceneCloth.cpp" />
+    <ClCompile Include="SceneDefferedRendering.cpp" />
+    <ClCompile Include="SceneFog.cpp" />
     <ClCompile Include="SceneLight.cpp" />
     <ClCompile Include="SceneMoveObject.cpp" />
     <ClCompile Include="SceneParticleSystem.cpp" />
+    <ClCompile Include="SceneRubber.cpp" />
     <ClCompile Include="SceneShading.cpp" />
+    <ClCompile Include="SceneSpring.cpp" />
     <ClCompile Include="SceneVisual.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="SpotLight.cpp" />
@@ -233,13 +239,19 @@
     <ClInclude Include="SceneBase.hpp" />
     <ClInclude Include="SceneBezierCurve.h" />
     <ClInclude Include="SceneBlank.h" />
+    <ClInclude Include="SceneBloom.h" />
     <ClInclude Include="SceneBumpmap.h" />
     <ClInclude Include="SceneBurstVector.h" />
+    <ClInclude Include="SceneCloth.h" />
+    <ClInclude Include="SceneDefferedRendering.h" />
+    <ClInclude Include="SceneFog.h" />
     <ClInclude Include="SceneLight.h" />
     <ClInclude Include="SceneMoveObject.h" />
     <ClInclude Include="SceneParticleSystem.h" />
     <ClInclude Include="SceneRoot.h" />
+    <ClInclude Include="SceneRubber.h" />
     <ClInclude Include="SceneShading.h" />
+    <ClInclude Include="SceneSpring.h" />
     <ClInclude Include="SceneVisual.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="SpotLight.h" />
@@ -247,8 +259,43 @@
     <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
+    <FxCompile Include="PS_AverageBlur.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="PS_Blur.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
     <FxCompile Include="PS_Bumpmap.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="PS_DefferedRendering.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="PS_DistanceFog.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="PS_GaussianBlur.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="PS_GBuffer.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="PS_HeightFog.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="PS_Luminance.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
     </FxCompile>
     <FxCompile Include="PS_ParallaxMapping.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
