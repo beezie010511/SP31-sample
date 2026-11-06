@@ -22,6 +22,7 @@
 #include "SceneRubber.h"
 #include "SceneCloth.h"
 #include "SceneFog.h"
+#include "SceneWave.h"
 
 #include "DebugLog.h"
 
@@ -46,6 +47,7 @@ enum SceneKind
 	SCENE_RUBBER,			// 12_ばねシミュレーション(連結)
 	SCENE_CLOTH,			// 13_布シミュレーション
 	SCENE_FOG,				// 14_霧サンプル
+	SCENE_WAVE,				// 15_波シミュレーション
 	//SCENE_ANIMATION,		// ワンスキンアニメーションサンプル
 	SCENE_MAX				// 終端
 };
@@ -119,6 +121,10 @@ void SceneRoot::ChangeScene()
 	case SCENE_FOG:
 		AddSubScene<SceneFog>();
 		m_sceneName = "SCENE_FOG";
+		break;
+	case SCENE_WAVE:
+		AddSubScene<SceneWave>();
+		m_sceneName = "SCENE_WAVE";
 		break;
 	
 

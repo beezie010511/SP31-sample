@@ -180,6 +180,9 @@
     <ClCompile Include="SceneFog.cpp">
       <Filter>ソース ファイル\App\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="SceneWave.cpp">
+      <Filter>ソース ファイル\App\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -306,6 +309,9 @@
       <Filter>ヘッダー ファイル\App\Scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneFog.h">
+      <Filter>ヘッダー ファイル\App\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneWave.h">
       <Filter>ヘッダー ファイル\App\Scene</Filter>
     </ClInclude>
   </ItemGroup>
