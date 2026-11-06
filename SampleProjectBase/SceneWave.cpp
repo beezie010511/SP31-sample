@@ -59,14 +59,53 @@ void SceneWave::Uninit()
 void SceneWave::Update(float tick)
 {
 	m_time += tick;
-	bool isInput = false;
 
-	//===============================================================================
-	//
-	//    ここに計算式を入れて頂点を動かす
-	//
-	//===============================================================================
+	float moveSpeed = 10.0f * tick;
 
+	if (IsKeyPress(VK_UP))
+	{
+		waveOrigin.z -= moveSpeed;
+	}
+
+	if (IsKeyPress(VK_DOWN))
+	{
+		waveOrigin.z += moveSpeed;
+	}
+
+	if (IsKeyPress(VK_LEFT))
+	{
+		waveOrigin.x -= moveSpeed;
+	}
+
+	if (IsKeyPress(VK_RIGHT))
+	{
+		waveOrigin.x += moveSpeed;
+	}
+
+
+	for (int i = 0; i < VERTEX_VERTICAL_MAX; i++)
+	{
+		for (int j = 0; j < VERTEX_HORIZONTAL_MAX; j++)
+		{
+			float x = DEFAULT_LENGTH * i;
+			float z = DEFAULT_LENGTH * j;
+
+			float dx = x - waveOrigin.x;
+			float dz = z - waveOrigin.z;
+
+			float dist = sqrtf(dx * dx + dz * dz);
+
+			float amplitude = 3.0f;      // wave height
+			float frequency = 0.3f;       // wave spacing
+			float speed = 3.0f;           // propagation speed
+
+			float y = amplitude * sinf(dist * frequency - m_time * speed);
+
+			wavePoint[i][j].x = x;
+			wavePoint[i][j].y = y;
+			wavePoint[i][j].z = z;
+		}
+	}
 }
 
 void SceneWave::Draw()

@@ -23,23 +23,23 @@ public:
 	};
 
 private:
-	const static int VERTEX_VERTICAL_MAX = 50;		// ’¸“_‚Ì”_‰¡
-	const static int VERTEX_HORIZONTAL_MAX = 50;	// ’¸“_‚Ì”_c
+	const static int VERTEX_VERTICAL_MAX = 50;		// ï¿½ï¿½ï¿½_ï¿½Ìï¿½_ï¿½ï¿½
+	const static int VERTEX_HORIZONTAL_MAX = 50;	// ï¿½ï¿½ï¿½_ï¿½Ìï¿½_ï¿½c
 	const static int SPRING_MAX =	(VERTEX_HORIZONTAL_MAX * (VERTEX_VERTICAL_MAX - 1)) +
 									(VERTEX_VERTICAL_MAX * (VERTEX_HORIZONTAL_MAX - 1)) +
 									((VERTEX_VERTICAL_MAX - 1) * (VERTEX_HORIZONTAL_MAX - 1) * 2);
 	float m_time = 0.0f;
 
 	const float PI = 3.141592f;
-	const float DEFAULT_LENGTH = 1.0f;		// ’¸“_‚ÌŠÔŠu
-	const float WAVE_AMPLITUDE = 2.0f;		// U•
-	const float WAVE_LENGTH = 20.0f;		// ”g’· ƒÉ
-	const float WAVE_CYCLE = 2.0f;			// ŽüŠú T
+	const float DEFAULT_LENGTH = 1.0f;		// ï¿½ï¿½ï¿½_ï¿½ÌŠÔŠu
+	const float WAVE_AMPLITUDE = 2.0f;		// ï¿½Uï¿½ï¿½
+	const float WAVE_LENGTH = 20.0f;		// ï¿½gï¿½ï¿½ ï¿½ï¿½
+	const float WAVE_CYCLE = 2.0f;			// ï¿½ï¿½ï¿½ï¿½ T
 
 
-	DirectX::XMFLOAT3 waveOrigin = DirectX::XMFLOAT3(DEFAULT_LENGTH * VERTEX_VERTICAL_MAX / 2 , 5.0f, DEFAULT_LENGTH * VERTEX_HORIZONTAL_MAX / 2);	// ”g‚ÌŒ´“_
-	DirectX::XMFLOAT3 wavePoint[VERTEX_VERTICAL_MAX][VERTEX_HORIZONTAL_MAX];	// ”g’¸“_ŠÇ—”z—ñ
-	LINE_SET lineList[SPRING_MAX];										// ƒ‰ƒCƒ“ŠÇ—”z—ñ
+	DirectX::XMFLOAT3 waveOrigin = DirectX::XMFLOAT3(DEFAULT_LENGTH * VERTEX_VERTICAL_MAX / 2 , 5.0f, DEFAULT_LENGTH * VERTEX_HORIZONTAL_MAX / 2);	// ï¿½gï¿½ÌŒï¿½ï¿½_
+	DirectX::XMFLOAT3 wavePoint[VERTEX_VERTICAL_MAX][VERTEX_HORIZONTAL_MAX];	// ï¿½gï¿½ï¿½ï¿½_ï¿½Ç—ï¿½ï¿½zï¿½ï¿½
+	LINE_SET lineList[SPRING_MAX];										// ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Ç—ï¿½ï¿½zï¿½ï¿½
 };
 
 #endif // __SCENE_WAVE_H__
