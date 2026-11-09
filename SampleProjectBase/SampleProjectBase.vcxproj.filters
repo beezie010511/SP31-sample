@@ -183,6 +183,9 @@
     <ClCompile Include="SceneWave.cpp">
       <Filter>ソース ファイル\App\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="SceneFur.cpp">
+      <Filter>ソース ファイル\App\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -314,6 +317,9 @@
     <ClInclude Include="SceneWave.h">
       <Filter>ヘッダー ファイル\App\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="SceneFur.h">
+      <Filter>ヘッダー ファイル\App\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="PS_TexColor.hlsl">
@@ -381,6 +387,18 @@
     </FxCompile>
     <FxCompile Include="PS_HeightFog.hlsl">
       <Filter>リソース ファイル\PixelShader</Filter>
+    </FxCompile>
+    <FxCompile Include="VS_Fur.hlsl">
+      <Filter>リソース ファイル\VertexShader</Filter>
+    </FxCompile>
+    <FxCompile Include="PS_Fur.hlsl">
+      <Filter>リソース ファイル\PixelShader</Filter>
+    </FxCompile>
+    <FxCompile Include="GS_FurShell.hlsl">
+      <Filter>リソース ファイル\GeometryShader</Filter>
+    </FxCompile>
+    <FxCompile Include="GS_FurFin.hlsl">
+      <Filter>リソース ファイル\GeometryShader</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>

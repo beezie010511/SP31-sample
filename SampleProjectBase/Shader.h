@@ -1,4 +1,4 @@
-ï»¿#ifndef __SHADER_H__
+#ifndef __SHADER_H__
 #define __SHADER_H__
 
 #include "DirectX.h"
@@ -7,7 +7,7 @@
 #include <map>
 #include <vector>
 
-// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®åŸºæœ¬ã‚¯ãƒ©ã‚¹
+// ƒVƒF[ƒ_[‚ÌŠî–{ƒNƒ‰ƒX
 class Shader
 {
 protected:
@@ -24,23 +24,23 @@ protected:
 public:
 	virtual ~Shader();
 public:
-	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ãƒ•ã‚¡ã‚¤ãƒ«(*.cso)ã‚’èª­ã¿è¾¼ã‚€å‡¦ç†
+	// ƒVƒF[ƒ_[ƒtƒ@ƒCƒ‹(*.cso)‚ğ“Ç‚İ‚Şˆ—
 	HRESULT Load(const char* pFileName);
-	// æ–‡å­—åˆ—ã‹ã‚‰ã‚·ã‚§ãƒ¼ãƒ€ã‚’ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«
+	// •¶š—ñ‚©‚çƒVƒF[ƒ_‚ğƒRƒ“ƒpƒCƒ‹
 	HRESULT Compile(const char* pCode);
 
 
-	// å®šæ•°ã®æ›¸ãè¾¼ã¿
+	// ’è”‚Ì‘‚«‚İ
 	void WriteBuffer(UINT slot, void* pData);
-	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®è¨­å®š
+	// ƒeƒNƒXƒ`ƒƒ‚Ìİ’è
 	void SetTexture(UINT slot, Texture* tex);
-	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã‚’æç”»ã«ä½¿ç”¨
+	// ƒVƒF[ƒ_[‚ğ•`‰æ‚Ég—p
 	virtual void Bind(void) = 0;
 
 private:
 	HRESULT Make(void* pData, UINT size);
 protected:
-	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚“ã å¾Œã€ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®ç¨®é¡åˆ¥ã«å‡¦ç†ã‚’è¡Œã†
+	// ƒVƒF[ƒ_[ƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚ñ‚¾ŒãAƒVƒF[ƒ_[‚Ìí—Ş•Ê‚Éˆ—‚ğs‚¤
 	virtual HRESULT MakeShader(void* pData, UINT size) = 0;
 
 private:
@@ -51,14 +51,13 @@ protected:
 };
 
 //----------
-// é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€
+// ’¸“_ƒVƒF[ƒ_
 class VertexShader : public Shader
 {
 public:
 	VertexShader();
 	~VertexShader();
 	void Bind(void);
-	static void Unbind();
 protected:
 	HRESULT MakeShader(void* pData, UINT size);
 
@@ -67,14 +66,13 @@ private:
 	ID3D11InputLayout* m_pInputLayout;
 };
 //----------
-// ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€
+// ƒsƒNƒZƒ‹ƒVƒF[ƒ_
 class PixelShader : public Shader
 {
 public:
 	PixelShader();
 	~PixelShader();
 	void Bind(void);
-	static void Unbind();
 protected:
 	HRESULT MakeShader(void* pData, UINT size);
 private:
@@ -82,7 +80,7 @@ private:
 };
 
 //----------
-// ãƒãƒ«ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼
+// ƒnƒ‹ƒVƒF[ƒ_[
 class HullShader : public Shader
 {
 public:
@@ -97,7 +95,7 @@ private:
 };
 
 //----------
-// ãƒ‰ãƒ¡ã‚¤ãƒ³ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼
+// ƒhƒƒCƒ“ƒVƒF[ƒ_[
 class DomainShader : public Shader
 {
 public:
@@ -112,7 +110,7 @@ private:
 };
 
 //----------
-// ã‚¸ã‚ªãƒ¡ãƒˆãƒªã‚·ã‚§ãƒ¼ãƒ€ãƒ¼
+// ƒWƒIƒƒgƒŠƒVƒF[ƒ_[
 class GeometryShader : public Shader
 {
 public:

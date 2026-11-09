@@ -23,6 +23,7 @@
 #include "SceneCloth.h"
 #include "SceneFog.h"
 #include "SceneWave.h"
+#include "SceneFur.h"
 
 #include "DebugLog.h"
 
@@ -48,6 +49,7 @@ enum SceneKind
 	SCENE_CLOTH,			// 13_布シミュレーション
 	SCENE_FOG,				// 14_霧サンプル
 	SCENE_WAVE,				// 15_波シミュレーション
+	SCENE_FUR,				// 16_毛シミュレーション
 	//SCENE_ANIMATION,		// ワンスキンアニメーションサンプル
 	SCENE_MAX				// 終端
 };
@@ -125,6 +127,10 @@ void SceneRoot::ChangeScene()
 	case SCENE_WAVE:
 		AddSubScene<SceneWave>();
 		m_sceneName = "SCENE_WAVE";
+		break;
+	case SCENE_FUR:
+		AddSubScene<SceneFur>();
+		m_sceneName = "SCENE_FUR";
 		break;
 	
 

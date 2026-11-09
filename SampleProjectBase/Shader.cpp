@@ -146,10 +146,7 @@ void VertexShader::Bind(void)
 	for (int i = 0; i < m_pTextures.size(); ++i)
 		pContext->VSSetShaderResources(i, 1, &m_pTextures[i]);
 }
-void VertexShader::Unbind(void)
-{
-	GetContext()->VSSetShader(nullptr, nullptr, 0);
-}
+
 HRESULT VertexShader::MakeShader(void* pData, UINT size)
 {
 	HRESULT hr;
@@ -253,10 +250,6 @@ void PixelShader::Bind(void)
 		pContext->PSSetConstantBuffers(i, 1, &m_pBuffers[i]);
 	for (int i = 0; i < m_pTextures.size(); ++i)
 		pContext->PSSetShaderResources(i, 1, &m_pTextures[i]);
-}
-void PixelShader::Unbind(void)
-{
-	GetContext()->PSSetShader(nullptr, nullptr, 0);
 }
 HRESULT PixelShader::MakeShader(void* pData, UINT size)
 {
