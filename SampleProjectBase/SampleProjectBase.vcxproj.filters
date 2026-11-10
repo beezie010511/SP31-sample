@@ -400,5 +400,8 @@
     <FxCompile Include="GS_FurFin.hlsl">
       <Filter>リソース ファイル\GeometryShader</Filter>
     </FxCompile>
+    <FxCompile Include="GS_Fur.hlsl">
+      <Filter>リソース ファイル\GeometryShader</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

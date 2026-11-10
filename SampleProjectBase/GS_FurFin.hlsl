@@ -23,38 +23,37 @@ cbuffer WVP : register(b0)
 //ジオメトリシェーダーで生成する頂点の最大数
 [maxvertexcount(7)]
 void main(
- /* ジオメトリシェーダーの入力
-point ...点、入力の数は１つだけ
-line ...線、入力の数は２つ
-triangle...三角形、入力の数は３つ
- */
-triangle GS_IN input[3],
-inout TriangleStream<GS_OUT> output
+    /* ジオメトリシェーダーの入力
+    point ...点、入力の数は１つだけ
+    line ...線、入力の数は２つ
+    triangle...三角形、入力の数は３つ
+    */  
+    triangle GS_IN input[3],
+    inout TriangleStream<GS_OUT> output
 )
 {
     GS_OUT vtx;
     
-    //もとになる三角形をそのまま表示
     for (uint i = 0; i < 3; i++)
     {
         //頂点の情報をコピー
         vtx.pos = input[i].pos;
         vtx.uv = input[i].uv;
         vtx.normal = input[i].normal;
-        vtx.color = float4(0.7f, 0.7f, 0.7f, 0.7f);
+        vtx.color = float4(0.7f, 0.7f, 0.7f, 0.0f);
         
         //行列で変換
         vtx.pos = mul(vtx.pos, world);
         vtx.pos = mul(vtx.pos, view);
         vtx.pos = mul(vtx.pos, proj);
         
-        //出力ストリームに頂点を追加
         output.Append(vtx);
     }
-    //ここまで設定されている頂点の情報でポリゴンを表示(TRIANGLESTRIP))
+    //ここまで設定されている頂点の情報でポリゴンを表示
     output.RestartStrip();
+   
     
-    //---視角の計算
+    //---四角の計算
     //一つ目の頂点を設定
     vtx.pos = input[0].pos;
     vtx.uv = input[0].uv;
