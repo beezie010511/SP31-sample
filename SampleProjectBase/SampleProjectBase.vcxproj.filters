@@ -186,6 +186,9 @@
     <ClCompile Include="SceneFur.cpp">
       <Filter>ソース ファイル\App\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="SceneTessellation.cpp">
+      <Filter>ソース ファイル\App\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Defines.h">
@@ -320,6 +323,9 @@
     <ClInclude Include="SceneFur.h">
       <Filter>ヘッダー ファイル\App\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="SceneTessellation.h">
+      <Filter>ヘッダー ファイル\App\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="PS_TexColor.hlsl">
@@ -402,6 +408,18 @@
     </FxCompile>
     <FxCompile Include="GS_Fur.hlsl">
       <Filter>リソース ファイル\GeometryShader</Filter>
+    </FxCompile>
+    <FxCompile Include="PS_Tessellation.hlsl">
+      <Filter>リソース ファイル\TessellationShader</Filter>
+    </FxCompile>
+    <FxCompile Include="VS_Tessellation.hlsl">
+      <Filter>リソース ファイル\TessellationShader</Filter>
+    </FxCompile>
+    <FxCompile Include="HS_Tessellation.hlsl">
+      <Filter>リソース ファイル\TessellationShader</Filter>
+    </FxCompile>
+    <FxCompile Include="DS_Tessellation.hlsl">
+      <Filter>リソース ファイル\TessellationShader</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>
