@@ -52,8 +52,11 @@
     <Filter Include="リソース ファイル\GeometryShader">
       <UniqueIdentifier>{6c81cf6e-5d9f-4745-9d71-16e02b10c7de}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル\TessellationShader">
-      <UniqueIdentifier>{016f58a7-5fa2-47cf-85e7-7c941497328d}</UniqueIdentifier>
+    <Filter Include="リソース ファイル\DomainShader">
+      <UniqueIdentifier>{70a5d9a4-eef4-4262-9b85-b582a6b8637e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\HullShader">
+      <UniqueIdentifier>{81dfd7f5-9185-42e1-9c65-5135d6dd278c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -409,17 +412,17 @@
     <FxCompile Include="GS_Fur.hlsl">
       <Filter>リソース ファイル\GeometryShader</Filter>
     </FxCompile>
-    <FxCompile Include="PS_Tessellation.hlsl">
-      <Filter>リソース ファイル\TessellationShader</Filter>
-    </FxCompile>
     <FxCompile Include="VS_Tessellation.hlsl">
-      <Filter>リソース ファイル\TessellationShader</Filter>
+      <Filter>リソース ファイル\VertexShader</Filter>
     </FxCompile>
-    <FxCompile Include="HS_Tessellation.hlsl">
-      <Filter>リソース ファイル\TessellationShader</Filter>
+    <FxCompile Include="PS_Tessellation.hlsl">
+      <Filter>リソース ファイル\PixelShader</Filter>
     </FxCompile>
     <FxCompile Include="DS_Tessellation.hlsl">
-      <Filter>リソース ファイル\TessellationShader</Filter>
+      <Filter>リソース ファイル\DomainShader</Filter>
+    </FxCompile>
+    <FxCompile Include="HS_Tessellation.hlsl">
+      <Filter>リソース ファイル\HullShader</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>
